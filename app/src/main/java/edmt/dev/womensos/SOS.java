@@ -79,6 +79,8 @@ public class SOS extends AppCompatActivity {
                 sms.sendTextMessage(stralternate, null, msg, sentPI, deliveredPI);
             }
         });
+
+
     }
 
     @Override
