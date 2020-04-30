@@ -26,8 +26,6 @@ public class SOS extends AppCompatActivity {
     TextView txt, altclick;
     Button sos, update;
 
-    private final int MY_PERMISSIONS_REQUEST_SEND_SMS = 1;
-
     private final String SENT = "SMS_SENT";
     private final String DELIVERED = "SMS_DELIVERED";
     PendingIntent sentPI, deliveredPI;
