@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".history"></activity>
+        <activity android:name=".update"></activity>
+        <activity android:name=".history" />
         <activity android:name=".SOS" />
         <activity android:name=".Profile" />
         <activity android:name=".Login" />

@@ -1,6 +1,7 @@
 package edmt.dev.womensos;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -17,14 +18,22 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.telephony.SmsManager;
+import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SOS extends AppCompatActivity {
     TextView txt, altclick;
     Button sos, update;
+
 
     private final String SENT = "SMS_SENT";
     private final String DELIVERED = "SMS_DELIVERED";
@@ -32,17 +41,16 @@ public class SOS extends AppCompatActivity {
     BroadcastReceiver smsSentReceiver, smsDeliveredReceiver;
     final static int REQUESTCODE_PERMISSION_SMS = 301;
 
+    SharedPreferences sharedPreferences = getSharedPreferences("Name_info", 0);
+    final String strname = sharedPreferences.getString("Name", "");
+    SharedPreferences sharedPreferences1 = getSharedPreferences("Guardian_info", 0);
+    final String strguardian = sharedPreferences1.getString("Guardian", "");
+    SharedPreferences sharedPreferences2 = getSharedPreferences("Alternate_info", 0);
+    final String stralternate = sharedPreferences2.getString("Alternate", "");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sos);
-
-        SharedPreferences sharedPreferences = getSharedPreferences("Name_info", 0);
-        String strname = sharedPreferences.getString("Name", "");
-        SharedPreferences sharedPreferences1 = getSharedPreferences("Guardian_info", 0);
-        final String strguardian = sharedPreferences1.getString("Guardian", "");
-        SharedPreferences sharedPreferences2 = getSharedPreferences("Alternate_info", 0);
-        final String stralternate = sharedPreferences2.getString("Alternate", "");
 
         txt = findViewById(R.id.txt);
         sos = findViewById(R.id.sos);
@@ -79,11 +87,18 @@ public class SOS extends AppCompatActivity {
                 sms.sendTextMessage(stralternate, null, msg, sentPI, deliveredPI);
             }
         });
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(SOS.this,update.class);
+                startActivity(i);
 
-
+            }
+        });
     }
 
-    @Override
+
+        @Override
     protected void onPause() {
         super.onPause();
 

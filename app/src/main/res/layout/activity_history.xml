@@ -6,4 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".history">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="363dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Date"
+        android:textColor="#023A33"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/t1"
+        android:layout_width="363dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:text="Food"
+        android:textColor="#023A33"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
