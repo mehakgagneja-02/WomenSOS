@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/back"
+    android:layout_height="match_parent"
+    tools:context=".Profile">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="301dp"
+        android:layout_height="400dp"
+        android:layout_gravity="center"
+        card_view:cardCornerRadius="40dp"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="211dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="@+id/txtpass"
+            app:layout_constraintTop_toBottomOf="@+id/txtpass">
+
+
+            <TextView
+                android:id="@+id/nametxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="31dp"
+                android:text="Name:"
+                android:textColor="#023A33"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                card_view:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Name"
+                android:backgroundTint="#023A33"
+                android:inputType="text"
+                android:textColor="#023A33"
+                android:textColorHighlight="#F7B907"
+                android:textColorHint="#F7B907"
+                app:layout_constraintTop_toBottomOf="@+id/nametxt"
+                card_view:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/guardiantxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="18dp"
+                android:text="Guardian's Phone Number"
+                android:textColor="#023A33"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/name" />
+
+            <EditText
+                android:id="@+id/guardian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Phone no."
+                android:backgroundTint="#023A33"
+                android:inputType="number"
+                android:textColor="#023A33"
+                android:textColorHighlight="#F7B907"
+                android:textColorHint="#F7B907"
+                app:layout_constraintTop_toBottomOf="@+id/guardiantxt"
+                card_view:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/alternatetxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="17dp"
+                android:layout_marginBottom="11dp"
+                android:text="Alternate Phone Number"
+                android:textColor="#023A33"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/alternate"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/alternate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#023A33"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="29dp"
+                android:ems="10"
+                android:hint="Phone no."
+                android:inputType="number"
+                android:textColor="#023A33"
+                android:textColorHighlight="#F7B907"
+                android:textColorHint="#F7B907"
+                app:layout_constraintBottom_toTopOf="@+id/submit"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/buttonround"
+                android:text="Submit"
+                android:textColor="#F8F5F1F1"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

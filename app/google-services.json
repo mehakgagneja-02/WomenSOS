@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "266974125927",
+    "firebase_url": "https://womensos.firebaseio.com",
+    "project_id": "womensos",
+    "storage_bucket": "womensos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:266974125927:android:ab28a2c1cf2df0ed2219c2",
+        "android_client_info": {
+          "package_name": "edmt.dev.womensos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "266974125927-apofqvr3ov7figugf1mjisl5d66lk0ft.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edmt.dev.womensos",
+            "certificate_hash": "813c4a7a4c000854401bbd735d7f0c45758b0664"
+          }
+        },
+        {
+          "client_id": "266974125927-pqrq0c0teta1bj8igs8ek9q4m5ljgm53.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUBiMaevkZBKnWS09od5xfYvix8qe4_9w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "266974125927-pqrq0c0teta1bj8igs8ek9q4m5ljgm53.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
