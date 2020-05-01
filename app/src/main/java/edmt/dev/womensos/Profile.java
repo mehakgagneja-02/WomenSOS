@@ -52,7 +52,7 @@ public class Profile extends AppCompatActivity {
                 editor1.commit();
                 SharedPreferences sharedPreferences2 = getSharedPreferences("Alternate_info",0);
                 SharedPreferences.Editor editor2 = sharedPreferences2.edit();
-                editor1.putString("Alternate",stralternate);
+                editor2.putString("Alternate",stralternate);
                 editor2.commit();
                 Intent i = new Intent(Profile.this,SOS.class);
                 startActivity(i);

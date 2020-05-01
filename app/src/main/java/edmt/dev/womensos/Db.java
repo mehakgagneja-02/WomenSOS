@@ -5,7 +5,7 @@ public class Db {
     String dbname;
     String dbguardian;
     String dbalternate;
-    public Db(String id, String strguardian){
+    public Db(){
 
     }
 

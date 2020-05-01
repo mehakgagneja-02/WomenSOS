@@ -2,6 +2,7 @@ package edmt.dev.womensos;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import android.Manifest;
+import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -35,9 +36,9 @@ public class SOS extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("Name_info", 0);
         String strname = sharedPreferences.getString("Name", "");
         SharedPreferences sharedPreferences1 = getSharedPreferences("Guardian_info", 0);
-        final String strguardian = sharedPreferences1.getString("Guardian", "");
+        final String strguardian = sharedPreferences1.getString("Guardian", null);
         SharedPreferences sharedPreferences2 = getSharedPreferences("Alternate_info", 0);
-        final String stralternate = sharedPreferences2.getString("Alternate", "");
+        final String stralternate = sharedPreferences2.getString("Alternate", null);
 
         txt = findViewById(R.id.txt);
         sos = findViewById(R.id.sos);
@@ -59,7 +60,7 @@ public class SOS extends AppCompatActivity {
                     ActivityCompat.requestPermissions(SOS.this, new String[]{Manifest.permission.SEND_SMS}, REQUESTCODE_PERMISSION_SMS);
                 }
                 SmsManager sms = SmsManager.getDefault();
-                sms.sendTextMessage(strguardian, null, msg, sentPI, deliveredPI);
+                sms.sendTextMessage(strguardian,null,msg,sentPI,deliveredPI);
             }
         });
 
@@ -71,8 +72,8 @@ public class SOS extends AppCompatActivity {
                 } else {
                     ActivityCompat.requestPermissions(SOS.this, new String[]{Manifest.permission.SEND_SMS}, REQUESTCODE_PERMISSION_SMS);
                 }
-                SmsManager sms = SmsManager.getDefault();
-                sms.sendTextMessage(stralternate, null, msg, sentPI, deliveredPI);
+                SmsManager sms1 = SmsManager.getDefault();
+                sms1.sendTextMessage(stralternate, null, msg, sentPI, deliveredPI);
             }
         });
         update.setOnClickListener(new View.OnClickListener() {
@@ -101,7 +102,7 @@ public class SOS extends AppCompatActivity {
 
                 switch (getResultCode())
                 {
-                    case SOS.RESULT_OK:
+                    case Activity.RESULT_OK:
                         Toast.makeText(context, "SMS sent successfully!", Toast.LENGTH_SHORT).show();
                         break;
 
@@ -140,11 +141,11 @@ public class SOS extends AppCompatActivity {
 
                 switch(getResultCode())
                 {
-                    case SOS.RESULT_OK:
+                    case Activity.RESULT_OK:
                         Toast.makeText(context, "SMS delivered!", Toast.LENGTH_SHORT).show();
                         break;
 
-                    case SOS.RESULT_CANCELED:
+                    case Activity.RESULT_CANCELED:
                         Toast.makeText(context, "SMS not delivered!", Toast.LENGTH_SHORT).show();
                         break;
                 }

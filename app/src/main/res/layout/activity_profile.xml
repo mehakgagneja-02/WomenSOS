@@ -82,7 +82,8 @@
                 android:textColorHighlight="#F7B907"
                 android:textColorHint="#F7B907"
                 app:layout_constraintTop_toBottomOf="@+id/guardiantxt"
-                card_view:layout_constraintStart_toStartOf="parent" />
+                card_view:layout_constraintStart_toStartOf="parent"
+                android:autofillHints="Phone no." />
 
             <TextView
                 android:id="@+id/alternatetxt"
@@ -110,7 +111,8 @@
                 android:textColorHighlight="#F7B907"
                 android:textColorHint="#F7B907"
                 app:layout_constraintBottom_toTopOf="@+id/submit"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                android:autofillHints="Phone no." />
 
             <Button
                 android:id="@+id/submit"
