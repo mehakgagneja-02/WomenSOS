@@ -19,7 +19,7 @@ import android.widget.Toast;
 
 public class SOS extends AppCompatActivity {
     TextView txt, altclick;
-    Button sos, update;
+    Button sos, update, logout;
 
     private final String SENT = "SMS_SENT";
     private final String DELIVERED = "SMS_DELIVERED";
@@ -41,6 +41,7 @@ public class SOS extends AppCompatActivity {
         final String stralternate = sharedPreferences2.getString("Alternate", null);
 
         txt = findViewById(R.id.txt);
+        logout= findViewById(R.id.logout);
         sos = findViewById(R.id.sos);
         altclick = findViewById(R.id.altclick);
         update = findViewById(R.id.update);
@@ -81,6 +82,13 @@ public class SOS extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(SOS.this,Profile.class);
                 startActivity(i);
+            }
+        });
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i1 = new Intent(SOS.this,Registration.class);
+                startActivity(i1);
             }
         });
     }

@@ -10,8 +10,8 @@
     <Button
         android:id="@+id/sos"
         android:layout_width="213dp"
-        android:layout_height="207dp"
-        android:layout_marginBottom="51dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="43dp"
         android:background="@drawable/sosbuttonround"
         android:text="SOS"
         android:textColor="#F8F5F1F1"
@@ -26,8 +26,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="214dp"
-        android:layout_marginBottom="55dp"
+        android:layout_marginBottom="48dp"
         android:text="Press the Button in case of Emergency."
         android:textColor="#023A33"
         android:textSize="18sp"
@@ -35,20 +34,20 @@
         app:layout_constraintBottom_toTopOf="@+id/sos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/logout" />
 
     <Button
         android:id="@+id/update"
         android:layout_width="175dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginBottom="199dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="191dp"
         android:background="@drawable/buttonround"
         android:text="update details"
         android:textColor="#F8F5F1F1"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -68,7 +67,7 @@
         android:id="@+id/altclick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
+        android:layout_marginStart="4dp"
         android:text="Click here"
         android:textColor="#F7B907"
         android:textSize="18sp"
@@ -82,7 +81,8 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="33dp"
+        android:layout_marginTop="528dp"
+        android:layout_marginBottom="26dp"
         android:text=" to notify to alternate number."
         android:textColor="#023A33"
         android:textSize="18sp"
@@ -90,5 +90,20 @@
         app:layout_constraintBottom_toTopOf="@+id/update"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/altclick"
-        app:layout_constraintTop_toBottomOf="@+id/sos" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="142dp"
+        android:background="@drawable/buttonround1"
+        android:text="Logout"
+        android:textColor="#F7B907"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
