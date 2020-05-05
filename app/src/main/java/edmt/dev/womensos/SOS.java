@@ -33,12 +33,10 @@ public class SOS extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sos);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("Name_info", 0);
+        SharedPreferences sharedPreferences = getSharedPreferences("All_info", 0);
         String strname = sharedPreferences.getString("Name", "");
-        SharedPreferences sharedPreferences1 = getSharedPreferences("Guardian_info", 0);
-        final String strguardian = sharedPreferences1.getString("Guardian", null);
-        SharedPreferences sharedPreferences2 = getSharedPreferences("Alternate_info", 0);
-        final String stralternate = sharedPreferences2.getString("Alternate", null);
+        final String strguardian = sharedPreferences.getString("Guardian", null);
+        final String stralternate = sharedPreferences.getString("Alternate", null);
 
         txt = findViewById(R.id.txt);
         logout= findViewById(R.id.logout);

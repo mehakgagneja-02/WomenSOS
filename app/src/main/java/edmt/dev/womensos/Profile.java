@@ -42,18 +42,12 @@ public class Profile extends AppCompatActivity {
                 String strname = name.getText().toString();
                 String strguardian = guardian.getText().toString();
                 String stralternate = alternate.getText().toString();
-                SharedPreferences sharedPreferences = getSharedPreferences("Name_info",0);
+                SharedPreferences sharedPreferences = getSharedPreferences("All_info",0);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("Name",strname);
+                editor.putString("Guardian",strguardian);
+                editor.putString("Alternate",stralternate);
                 editor.commit();
-                SharedPreferences sharedPreferences1 = getSharedPreferences("Guardian_info",0);
-                SharedPreferences.Editor editor1 = sharedPreferences1.edit();
-                editor1.putString("Guardian",strguardian);
-                editor1.commit();
-                SharedPreferences sharedPreferences2 = getSharedPreferences("Alternate_info",0);
-                SharedPreferences.Editor editor2 = sharedPreferences2.edit();
-                editor2.putString("Alternate",stralternate);
-                editor2.commit();
                 Intent i = new Intent(Profile.this,SOS.class);
                 startActivity(i);
             }
