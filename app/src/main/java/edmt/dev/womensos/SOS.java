@@ -34,6 +34,7 @@ public class SOS extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sos);
         final Vibrator vibe = (Vibrator) SOS.this.getSystemService(Context.VIBRATOR_SERVICE);
+        final Vibrator vibe1 = (Vibrator) SOS.this.getSystemService(Context.VIBRATOR_SERVICE);
 
         SharedPreferences sharedPreferences = getSharedPreferences("All_info", 0);
         String strname = sharedPreferences.getString("Name", "");
@@ -61,7 +62,7 @@ public class SOS extends AppCompatActivity {
                     ActivityCompat.requestPermissions(SOS.this, new String[]{Manifest.permission.SEND_SMS}, REQUESTCODE_PERMISSION_SMS);
                 }
                 SmsManager sms = SmsManager.getDefault();
-                vibe.vibrate(80);
+                vibe.vibrate(100);
                 sms.sendTextMessage(strguardian,null,msg,sentPI,deliveredPI);
             }
         });
@@ -74,6 +75,7 @@ public class SOS extends AppCompatActivity {
                 } else {
                     ActivityCompat.requestPermissions(SOS.this, new String[]{Manifest.permission.SEND_SMS}, REQUESTCODE_PERMISSION_SMS);
                 }
+                vibe1.vibrate(100);
                 SmsManager sms1 = SmsManager.getDefault();
                 sms1.sendTextMessage(stralternate, null, msg, sentPI, deliveredPI);
             }
