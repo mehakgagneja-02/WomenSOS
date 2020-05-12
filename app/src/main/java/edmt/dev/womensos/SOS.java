@@ -11,6 +11,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.Button;
@@ -32,6 +33,7 @@ public class SOS extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sos);
+        final Vibrator vibe = (Vibrator) SOS.this.getSystemService(Context.VIBRATOR_SERVICE);
 
         SharedPreferences sharedPreferences = getSharedPreferences("All_info", 0);
         String strname = sharedPreferences.getString("Name", "");
@@ -59,6 +61,7 @@ public class SOS extends AppCompatActivity {
                     ActivityCompat.requestPermissions(SOS.this, new String[]{Manifest.permission.SEND_SMS}, REQUESTCODE_PERMISSION_SMS);
                 }
                 SmsManager sms = SmsManager.getDefault();
+                vibe.vibrate(80);
                 sms.sendTextMessage(strguardian,null,msg,sentPI,deliveredPI);
             }
         });
